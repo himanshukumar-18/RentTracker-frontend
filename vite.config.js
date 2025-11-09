@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api/v1/rent-tracker": {
-        target: process.env.VITE_API_PROXY,
+        target: process.env.VITE_API_PROXY || "http://localhost:8000",
         changeOrigin: true,
         secure: true
       }
